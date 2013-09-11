@@ -10,9 +10,7 @@ __CRP const unsigned int CRP_WORD = CRP_NO_CRP ;
 #include "includes_todos.h"
 #include "stdio.h"
 
-	//PROGRAMA ROBOT
-//anduvio
-// loco esto es un bardo
+//ESTO LES LLEGA O NO
 
 int main(void) {
 
