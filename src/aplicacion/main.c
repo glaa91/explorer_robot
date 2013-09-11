@@ -12,6 +12,7 @@ __CRP const unsigned int CRP_WORD = CRP_NO_CRP ;
 
 	//PROGRAMA ROBOT
 //a ver si funciona esto soy rodri
+//tongas lo ves?
 
 int main(void) {
 
