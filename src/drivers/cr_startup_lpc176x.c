@@ -5,11 +5,11 @@
 //     |     |
 //   +-+--+  |
 //   | +--+--+
-//   +----+    Copyright (c) 2009-12 Code Red Technologies Ltd.
+//   +----+    Copyright (c) 2009-10 Code Red Technologies Ltd.
 //
 // Microcontroller Startup code for use with Red Suite
 //
-// Version : 120126
+// Version : 101130
 //
 // Software License Agreement
 //
@@ -69,7 +69,7 @@ WEAK void HardFault_Handler(void);
 WEAK void MemManage_Handler(void);
 WEAK void BusFault_Handler(void);
 WEAK void UsageFault_Handler(void);
-WEAK void SVC_Handler(void);
+WEAK void SVCall_Handler(void);
 WEAK void DebugMon_Handler(void);
 WEAK void PendSV_Handler(void);
 WEAK void SysTick_Handler(void);
@@ -101,10 +101,10 @@ void SSP0_IRQHandler(void) ALIAS(IntDefaultHandler);
 void SSP1_IRQHandler(void) ALIAS(IntDefaultHandler);
 void PLL0_IRQHandler(void) ALIAS(IntDefaultHandler);
 void RTC_IRQHandler(void) ALIAS(IntDefaultHandler);
-void EINT0_IRQHandler(void) ALIAS(IntDefaultHandler);
-void EINT1_IRQHandler(void) ALIAS(IntDefaultHandler);
-void EINT2_IRQHandler(void) ALIAS(IntDefaultHandler);
-void EINT3_IRQHandler(void) ALIAS(IntDefaultHandler);
+void EINT0_IRQHandler(void) ALIAS(IntDefaultHandler);	//INTERRUPCIONES
+void EINT1_IRQHandler(void) ALIAS(IntDefaultHandler);	//INTERRUPCIONES
+void EINT2_IRQHandler(void) ALIAS(IntDefaultHandler);	//INTERRUPCIONES
+void EINT3_IRQHandler(void) ALIAS(IntDefaultHandler);	//INTERRUPCIONES
 void ADC_IRQHandler(void) ALIAS(IntDefaultHandler);
 void BOD_IRQHandler(void) ALIAS(IntDefaultHandler);
 void USB_IRQHandler(void) ALIAS(IntDefaultHandler);
@@ -162,7 +162,7 @@ void (* const g_pfnVectors[])(void) = {
 	0,										// Reserved
 	0,										// Reserved
 	0,										// Reserved
-	SVC_Handler,							// SVCall handler
+	SVCall_Handler,							// SVCall handler
 	DebugMon_Handler,						// Debug monitor handler
 	0,										// Reserved
 	PendSV_Handler,							// The PendSV handler
@@ -378,7 +378,7 @@ void UsageFault_Handler(void)
     }
 }
 __attribute__ ((section(".after_vectors")))
-void SVC_Handler(void)
+void SVCall_Handler(void)
 {
     while(1)
     {
