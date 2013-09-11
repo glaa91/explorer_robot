@@ -17,7 +17,7 @@ int main(void) {
 	InicializarPlacaBase();
 	//InicializarExp1();
 	//InicializarISR();
-	//InicializarSysTick();
+	InicializarSysTick();
 
 	setPin(BUZZ,BUZZ_OFF);
 
