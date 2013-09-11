@@ -12,6 +12,7 @@ __CRP const unsigned int CRP_WORD = CRP_NO_CRP ;
 
 	//PROGRAMA ROBOT
 //anduvio
+// loco esto es un bardo
 
 int main(void) {
 
