@@ -11,7 +11,7 @@ __CRP const unsigned int CRP_WORD = CRP_NO_CRP ;
 #include "stdio.h"
 
 	//PROGRAMA ROBOT
-//prueba tongas
+//modificacion gaston
 
 int main(void) {
 
