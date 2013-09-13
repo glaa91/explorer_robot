@@ -9,6 +9,7 @@ void InicializarExp2 (void)
 	setPinSel (DIG4, PINSEL_GPIO);
 	setPinSel (DIG5, PINSEL_GPIO);
 	setPinSel (DIG6, PINSEL_GPIO);
+
 	setPinSel (SEG_A, PINSEL_GPIO);
 	setPinSel (SEG_B, PINSEL_GPIO);
 	setPinSel (SEG_C, PINSEL_GPIO);
@@ -24,6 +25,7 @@ void InicializarExp2 (void)
 	setPinDir (DIG4, SALIDA);
 	setPinDir (DIG5, SALIDA);
 	setPinDir (DIG6, SALIDA);
+
 	setPinDir (SEG_A, SALIDA);
 	setPinDir (SEG_B, SALIDA);
 	setPinDir (SEG_C, SALIDA);

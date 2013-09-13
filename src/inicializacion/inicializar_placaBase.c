@@ -1,6 +1,7 @@
 #include "includes_todos.h"
 
-void InicializarPlacaBase(){
+void InicializarPlacaBase()
+{
 	inic_Teclado ();
 	inic_Relay_Buzz ();
 	inic_RGB ();
@@ -30,12 +31,14 @@ void inic_Relay_Buzz (void)
 	setPinSel (RELAY2, PINSEL_GPIO);
 	setPinSel (RELAY3, PINSEL_GPIO);
 	setPinSel (RELAY4, PINSEL_GPIO);
+
 	setPinSel (BUZZ, PINSEL_GPIO);
 
 	setPinDir (RELAY1, SALIDA);
 	setPinDir (RELAY2, SALIDA);
 	setPinDir (RELAY3, SALIDA);
 	setPinDir (RELAY4, SALIDA);
+
 	setPinDir (BUZZ, SALIDA);
 }
 

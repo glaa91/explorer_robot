@@ -10,10 +10,8 @@ __CRP const unsigned int CRP_WORD = CRP_NO_CRP ;
 #include "includes_todos.h"
 #include "stdio.h"
 
-//ESTO LES LLEGA O NO
-
-int main(void) {
-
+int main(void)
+{
 	InicializarLPC();
 	InicializarPlacaBase();
 	//InicializarExp1();
@@ -22,8 +20,7 @@ int main(void) {
 
 	setPin(BUZZ,BUZZ_OFF);
 
-	while(1) {
+	while(1);
 
-	}
 	return 0 ;
 }

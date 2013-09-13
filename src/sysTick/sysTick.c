@@ -6,7 +6,8 @@ timer_t tmr_run_seg[TIMER_SEG];
 event_t eventos_seg;
 
 
-void InicializarSysTick(void){
+void InicializarSysTick(void)
+{
 	STRELOAD = ( STCALIB / 1 ) - 1;
 	STCURR = 0;
 	CLKSOURCE = 1;
@@ -21,7 +22,8 @@ void InicializarSysTick(void){
 //timerStart(0,4,SEG) Timer 0, Cada 4, SEGUNDOS
 //si lo disparo cada 0 segundos puedo interpretar que lo quiero apagar
 
-void timerStart (uint8_t n_ev, timer_t t, uint8_t u){
+void timerStart (uint8_t n_ev, timer_t t, uint8_t u)
+{
 	switch(u){
 		case DEC:
 			//para y arranca la interrupcion
@@ -46,38 +48,50 @@ void timerStart (uint8_t n_ev, timer_t t, uint8_t u){
 			break;
 	}
 }
-//void timerStop (uchar n_ev, timer_t t, uchar8_t u){
+
+//void timerStop (uchar n_ev, timer_t t, uchar8_t u)
+//{
 //
 //}
-void timerClose (void){
+
+void timerClose (void)
+{
 	uint8_t i;
-	for(i=0; i<TIMER_SEG; i++){
+
+	for(i=0; i<TIMER_SEG; i++)
+	{
 		timerStop(i,SEG);
 	}
 }
 
-void SysTick_Handler(void){
+void SysTick_Handler(void)
+{
 	static uint8_t ticks = UNA_DECIMA;
 	static uint8_t decimas = UN_SEGUNDO;
 
 	ticks --;
 
-	if(!ticks){
+	if(!ticks)
+	{
 		ticks = UNA_DECIMA;
 		decimas--;
 
-		if(!decimas){
+		if(!decimas)
+		{
 			decimas = UN_SEGUNDO;
 			analizarTimer(tmr_run_seg, &eventos_seg, TIMER_SEG);	//le pasamos la direcion del vector de los temporizadores que quiero analizar
 		}
 	}
 }
 
-void analizarTimer(timer_t tmr_run[], event_t *evento, uint8_t TIMERS){
+void analizarTimer(timer_t tmr_run[], event_t *evento, uint8_t TIMERS)
+{
 	uint8_t i;
 
-	for(i=0; i<TIMERS; i++){
-		if(tmr_run[i]){	//si vale algo hagoa lgo
+	for(i=0; i<TIMERS; i++)
+	{
+		if(tmr_run[i]) //si vale algo hagoa lgo
+		{
 			tmr_run[i] --;
 			if(!tmr_run[i])	*evento |= (1<<i);	//pongo en 1 el flag
 		}

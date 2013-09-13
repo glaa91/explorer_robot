@@ -1,4 +1,5 @@
 #include "includes_todos.h"
+
 //*************************FUNCIONES******************************
 
 void InicializarExp1 (void)
@@ -11,6 +12,7 @@ void InicializarExp1 (void)
 	setPinSel (LED6, PINSEL_GPIO);
 	setPinSel (LED7, PINSEL_GPIO);
 	setPinSel (LED8, PINSEL_GPIO);
+
 	setPinSel (DP1_1, PINSEL_GPIO);
 	setPinSel (DP1_2, PINSEL_GPIO);
 	setPinSel (DP1_3, PINSEL_GPIO);
@@ -19,6 +21,7 @@ void InicializarExp1 (void)
 	setPinSel (DP1_6, PINSEL_GPIO);
 	setPinSel (DP1_7, PINSEL_GPIO);
 	setPinSel (DP1_8, PINSEL_GPIO);
+
 	setPinSel (DP2_1, PINSEL_GPIO);
 	setPinSel (DP2_2, PINSEL_GPIO);
 	setPinSel (DP2_3, PINSEL_GPIO);
@@ -31,6 +34,7 @@ void InicializarExp1 (void)
 	setPinDir (LED6, SALIDA);
 	setPinDir (LED7, SALIDA);
 	setPinDir (LED8, SALIDA);
+
 	setPinDir (DP1_1, ENTRADA);
 	setPinDir (DP1_2, ENTRADA);
 	setPinDir (DP1_3, ENTRADA);
@@ -39,6 +43,7 @@ void InicializarExp1 (void)
 	setPinDir (DP1_6, ENTRADA);
 	setPinDir (DP1_7, ENTRADA);
 	setPinDir (DP1_8, ENTRADA);
+
 	setPinDir (DP2_1, ENTRADA);
 	setPinDir (DP2_2, ENTRADA);
 	setPinDir (DP2_3, ENTRADA);
